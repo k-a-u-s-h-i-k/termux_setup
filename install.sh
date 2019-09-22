@@ -6,29 +6,22 @@ apt update && apt upgrade
 # needed to send notifications to android system. You must have termux-api app downloaded from play store
 apt install -y termux-api
 
-# update the repos and install python ffmpeg and youtube-dl
-apt install -y python ffmpeg && pip install youtube-dl
+# install all necessary tools
+apt install -y git python ffmpeg && pip install youtube-dl
+
+# clone repo
+git clone https://github.com/k-a-u-s-h-i-k/termux_setup.git repo
 
 # setup arguments to pass to youtube-dl
 mkdir -p ~/.config/youtube-dl
-cat << HERE > ~/.config/youtube-dl/config
--f 'bestaudio[ext=m4a]/bestaudio'
---no-mtime
--o /data/data/com.termux/files/home/storage/shared/Music/Youtube/%(title)s.%(ext)s
-HERE
+ln -s ~/repo/config ~/.config/youtube-dl/config
 
 # setup to download via share menu
 mkdir ~/bin
-cat << 'HERE' > ~/bin/termux-url-opener
-#!/bin/bash
-echo 'Starting download'
-youtube-dl $1
-termux-notification --title "YouTube-DL" --content "Completed: $1"
-HERE
+ln -s ~/repo/termux-url-opener ~/bin/termux-url-opener
 
-cat << HERE > ~/.bashrc
-apt upgrade && pip install --upgrade pip && pip install --upgrade youtube-dl
-HERE
+# auto update script
+ln -s ~/repo/bashrc ~/.bashrc
 
 # needed to get access to android storage
 termux-setup-storage

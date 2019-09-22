@@ -1,0 +1,4 @@
+#!/bin/bash
+echo 'Starting download'
+youtube-dl $1
+termux-notification --title "YouTube-DL" --content "Completed: $1"
