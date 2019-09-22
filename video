@@ -1,5 +1,3 @@
 -f 'best'
 --no-mtime
 -o /data/data/com.termux/files/home/storage/shared/Music/Youtube/%(title)s.%(ext)s
---embed-thumbnail
---add-metadata
