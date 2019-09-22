@@ -14,7 +14,7 @@ mkdir -p ~/.config/youtube-dl
 cat << HERE > ~/.config/youtube-dl/config
 -f "bestaudio[ext=m4a]"
 --no-mtime
--o /data/data/com.termux/files/home/storage/shared/Music/Youtube/%(extractor_key)s/%(uploader)s/%(title)s-%(id)s.%(ext)s
+-o /data/data/com.termux/files/home/storage/shared/Music/Youtube/%(title)s.%(ext)s
 HERE
 
 # setup to download to share menu
