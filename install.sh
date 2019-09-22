@@ -19,11 +19,10 @@ HERE
 
 # setup to download via share menu
 mkdir ~/bin
-cat << HERE > ~/bin/termux-url-opener
+cat << 'HERE' > ~/bin/termux-url-opener
 #!/bin/bash
-url=$1
-youtube-dl $url
-termux-notification --title "YouTube-DL" --content "Completed: $url"
+youtube-dl $1
+termux-notification --title "YouTube-DL" --content "Completed: $1"
 HERE
 
 cat << HERE > ~/.bashrc
