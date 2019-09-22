@@ -1,4 +1,14 @@
 #!/bin/bash
 echo 'Starting download'
-youtube-dl $1
+
+CHOICE=$(termux-dialog radio -v "Audio,Video" -t "Download ..." | jq -r .index)
+
+if [ "$CHOICE" = 0 ]; then
+    youtube-dl $1
+elif [ "$CHOICE" = 1 ]; then
+    youtube-dl -f 'best' --no-mtime -o /data/data/com.termux/files/home/storage/shared/Music/Youtube/%(title)s.%(ext)s --embed-thumbnail --add-metadata
+else
+    termux-notification --title "YouTube-DL" --content "Failed to download: $1"
+fi
+
 termux-notification --title "YouTube-DL" --content "Completed: $1"
