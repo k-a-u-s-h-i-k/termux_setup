@@ -27,7 +27,7 @@ termux-notification --title "YouTube-DL" --content "Completed: $1"
 HERE
 
 cat << HERE > ~/.bashrc
-pkg upgrade && pip install --upgrade pip && pip install --upgrade youtube-dl
+apt upgrade && pip install --upgrade pip && pip install --upgrade youtube-dl
 HERE
 
 # needed to get access to android storage
