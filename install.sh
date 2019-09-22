@@ -12,7 +12,7 @@ apt install -y python ffmpeg && pip install youtube-dl
 # setup arguments to pass to youtube-dl
 mkdir -p ~/.config/youtube-dl
 cat << HERE > ~/.config/youtube-dl/config
--f "bestaudio[ext=m4a]"
+-f 'bestaudio[ext=m4a]/bestaudio'
 --no-mtime
 -o /data/data/com.termux/files/home/storage/shared/Music/Youtube/%(title)s.%(ext)s
 HERE
@@ -21,6 +21,7 @@ HERE
 mkdir ~/bin
 cat << 'HERE' > ~/bin/termux-url-opener
 #!/bin/bash
+echo 'Starting download'
 youtube-dl $1
 termux-notification --title "YouTube-DL" --content "Completed: $1"
 HERE
