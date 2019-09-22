@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # update repos first
-apt update && apt upgrade
+apt -y update && apt -y upgrade
 
 # needed to send notifications to android system. You must have termux-api app downloaded from play store
 apt install -y termux-api
