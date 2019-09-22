@@ -1,1 +1,6 @@
+* Install
+  To install this script, execute the following line
+
+#+BEGIN_SRC bash
 bash -c "$(curl -s https://raw.githubusercontent.com/k-a-u-s-h-i-k/termux_setup/master/install.sh)"
+#+END_SRC
