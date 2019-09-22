@@ -26,4 +26,4 @@ ln -s ~/repo/bashrc ~/.bashrc
 # needed to get access to android storage
 termux-setup-storage
 
-
+echo -e '\n\n \033[0;32m Setup completed successfully \033[0m'
