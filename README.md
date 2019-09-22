@@ -1,2 +1,1 @@
-A script that can be run to run termux setup after installation
-A script that can be run to run termux setup after installation
+bash -c "$(wget https://raw.githubusercontent.com/k-a-u-s-h-i-k/settings/coop/install.sh -O -)"
