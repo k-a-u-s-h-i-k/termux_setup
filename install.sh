@@ -23,6 +23,9 @@ ln -s ~/repo/termux-url-opener ~/bin/termux-url-opener
 # auto update script
 ln -s ~/repo/bashrc ~/.bashrc
 
+# termux properties
+ln -s ~/repo/termux.properties ~/.termux.properties
+
 # needed to get access to android storage
 termux-setup-storage
 
