@@ -7,7 +7,7 @@ if [ "$WIFI" != "COMPLETED" ]; then
     CONFIRM=$(termux-dialog confirm -t "Not on Wifi" -i "Are you sure you want to continue?" | jq -r ".text")
     if [ "$CONFIRM" != "yes" ]; then
         termux-notification --title "Download stopped" --content "Please reconnect to wifi and try again"
-        exit(1)
+        exit 1
     fi
 fi
 
