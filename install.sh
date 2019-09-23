@@ -7,7 +7,7 @@ apt -y update && apt -y upgrade
 apt install -y termux-api
 
 # install all necessary tools
-apt install -y git python ffmpeg atomicparsley jq && pip install youtube-dl
+apt install -y git python ffmpeg atomicparsley jq && pip install youtube-dl && pip install --upgrade pip
 
 # clone repo
 git clone https://github.com/k-a-u-s-h-i-k/termux_setup.git repo
